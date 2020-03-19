@@ -18,7 +18,7 @@ hbs.registerPartials(partialsPath)
 app.get("",(req,res)=>{
     res.render('index',{
         title:"Hall of Justice",
-        name: "Shardul",
+        name: "Titan X",
         
     })
 })
@@ -27,7 +27,7 @@ app.get("/contact",(req,res)=>{
     res.render('contact',{
         title:"Contact our Heroes",
         details:"these are some details",
-        name: "Shardul",
+        name: "Titan X",
         
     })
 })
@@ -37,7 +37,7 @@ app.get("/weather",(req,res)=>{
     if(!address){
         return res.render('noWeather',{
             title:"Live weather forecast",
-            name: "Shardul",
+            name: "Titan X",
         })
         
         
@@ -57,7 +57,7 @@ app.get("/weather",(req,res)=>{
                 pressure:pressure,
                 humidity:humidity,
                 windSpeed:windSpeed,
-                name: "Shardul",
+                name: "Titan X",
                 location: address,
 
             })
@@ -87,7 +87,7 @@ app.post('/myaction', urlBodyParser, function(req, res) {
     if(!address){
         return res.render('noWeather',{
             title:"Live weather forecast",
-            name: "Shardul",
+            name: "Titan X",
         })
         
         
@@ -106,7 +106,7 @@ app.post('/myaction', urlBodyParser, function(req, res) {
                 pressure:pressure,
                 humidity:humidity,
                 windSpeed:windSpeed,
-                name: "Shardul",
+                name: "Titan X",
                 location: address,
 
             })
