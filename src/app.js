@@ -7,7 +7,7 @@ const weatherPredictor = require('./utils/darkskyweather')
 const app = express()
 const viewPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
-
+const port = process.env.PORT || 3000
 const urlBodyParser = bodyParser.urlencoded({extended:false});
 
 
@@ -127,7 +127,7 @@ app.post('/myaction', urlBodyParser, function(req, res) {
 
 
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log("server is on")
 })
 
