@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <head>
+        Weather forecast
+    <style>
+        body{
+            background: skyblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+            padding: 50px;
+
+        }
+        h1{
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        p{
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            color: rgb(108, 65, 225);
+        }
+
+        input{
+            align-items: center;
+            border: 1px solid #cccccc;
+            padding: 8px;
+        }
+
+        button{
+            cursor: pointer;
+            border: 1px solid #d3cccc;
+            backgroundr: #888888;
+            
+            padding: 8px;
+            
+        }
+        
+    </style>
+    
+    </head>
+    
+    <body>
+        {{>header}}
+        <h1>Get Accurate Information!!!</h1>
+        <p>please provide valid location</p>
+        
+        
+        <form action="/myaction" method="post">
+            <input type="text" placeholder="location" name="location">
+            <button type="submit">Search</button>
+        </form>
+        
+        {{>footer}}
+        
+    </body>
+</html>

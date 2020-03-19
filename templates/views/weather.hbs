@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        Weather forecast
+    <style>
+        body{
+            background: skyblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+            padding: 50px;
+
+        }
+        h1{
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        p{
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            color: rgb(108, 65, 225);
+        }
+    </style>
+    </head>
+    
+    <body>
+        {{>header}}
+        <h1>{{location}}</h1>
+        <p>Current Temperature is {{temp}}</p>
+        <p>Current Pressure is {{pressure}}</p>
+        <p>Current Humidity is {{humidity}}</p>
+        <p>Current Wind Speed is {{windSpeed}}</p>
+        {{>footer}}
+        
+    </body>
+</html>
