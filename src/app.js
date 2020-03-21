@@ -19,7 +19,7 @@ app.get("",(req,res)=>{
     res.render('index',{
         title:"Hall of Justice",
         name: "Titan X",
-        
+         
     })
 })
 

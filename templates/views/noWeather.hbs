@@ -1,57 +1,35 @@
 <!DOCTYPE html>
     <head>
-        Weather forecast
-    <style>
-        body{
-            background: skyblue;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            
-            padding: 50px;
-
-        }
-        h1{
-            font-size: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-
-        p{
-            font-size: 20px;
-            text-transform: uppercase;
-            text-align: center;
-            color: rgb(108, 65, 225);
-        }
-
-        input{
-            align-items: center;
-            border: 1px solid #cccccc;
-            padding: 8px;
-        }
-
-        button{
-            cursor: pointer;
-            border: 1px solid #d3cccc;
-            backgroundr: #888888;
-            
-            padding: 8px;
-            
-        }
-        
-    </style>
-    
+        <link rel="stylesheet" type="text/css" href="../../public/css/primary.css">
     </head>
     
-    <body>
+    <body style="height:1500px">
         {{>header}}
-        <h1>Get Accurate Information!!!</h1>
-        <p>please provide valid location</p>
+        <div class="jumbotron text-center">
+            
+            <h2>Get Accurate Information!!!</h2>
+            <p>please provide valid location</p>
+        
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                </div> 
+                <div class="col-sm-6">
+                    <form action="/myaction" method="post">
+                        <div class="container-fluid">
+                            <input type="text"  placeholder="enter location" name="location">
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                </div>
+            </div>
+        </div>
+        </div>
         
         
-        <form action="/myaction" method="post">
-            <input type="text" placeholder="location" name="location">
-            <button type="submit">Search</button>
-        </form>
         
         {{>footer}}
         
