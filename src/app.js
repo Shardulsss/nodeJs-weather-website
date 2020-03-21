@@ -32,6 +32,8 @@ app.get("/contact",(req,res)=>{
     })
 })
 
+
+
 app.get("/weather",(req,res)=>{
     const address = req.query.address
     if(!address){
@@ -73,14 +75,40 @@ app.get("/weather",(req,res)=>{
     // })
 })
 
-app.get('*',(req,res)=>{
-    res.render('error',{
-        title:'page not found',
-    })
-})
+
 //const publicpath = path.join(__dirname,'../public')
 
 //app.use(express.static(publicpath));
+app.get("/co-ordinates",(req,res)=>{
+    res.render('findCord',{
+        title:"Find Co-ordinates",
+        name: "Titan X",
+    })
+})
+
+app.post("/co-ordinates-search",urlBodyParser,(req,res)=>{
+    console.log(req.body.location)
+    const address = req.body.location
+    if(!address){
+        return res.render('findCord',{
+            title:"Live weather forecast",
+            name: "Titan X",
+        }) 
+    }
+    geocode(address,(error,{latitude,longitude})=>{
+        if(error){
+            return res.send('location not found')
+        }
+        res.render('coord',{
+            latitude,
+            longitude,
+            location: address,
+            title:"Co-ordinates of:",
+            name: "Titan X",
+        })
+    })
+})
+
 app.post('/myaction', urlBodyParser, function(req, res) {
     console.log(req.body.location)
     const address = req.body.location;
@@ -125,7 +153,12 @@ app.post('/myaction', urlBodyParser, function(req, res) {
     //res.send("you requested for "+req.body.in)
   });
 
+app.get('*',(req,res)=>{
 
+    res.render('error',{
+        title:'page not found',
+    })
+})
 
 app.listen(port, ()=>{
     console.log("server is on")
